@@ -22,7 +22,7 @@ mod platform {
     }
 }
 
-pub use platform::*;
+use platform::*;
 
 #[cfg(test)]
 mod tests {
@@ -31,7 +31,7 @@ mod tests {
 
     configure!();
 
-    #[cross_test::test]
+    #[cross_test]
     async fn it_works() {
         assert_eq!(2 + 2, 4);
     }
