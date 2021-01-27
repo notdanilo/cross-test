@@ -22,14 +22,14 @@ mod platform {
     }
 }
 
-use platform::*;
+pub use platform::*;
 
 #[cfg(test)]
 mod tests {
     use crate as cross_test;
     use cross_test::prelude::*;
 
-    configure!();
+    cross_test_configure!();
 
     #[cross_test]
     async fn it_works() {
