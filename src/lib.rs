@@ -1,3 +1,5 @@
+pub mod prelude;
+
 #[cfg(not(target_arch = "wasm32"))]
 mod platform {
     pub use tokio::test as test;
@@ -10,13 +12,12 @@ mod platform {
 
 #[cfg(target_arch = "wasm32")]
 mod platform {
-    pub use wasm_bindgen_test::wasm_bindgen_test_configure as web_configure;
     pub use wasm_bindgen_test::wasm_bindgen_test as test;
 
     #[macro_export]
     macro_rules! configure {
         () => {
-            $crate::web_configure!(run_in_browser);
+            wasm_bindgen_test::wasm_bindgen_test_configure!(run_in_browser);
         }
     }
 }
