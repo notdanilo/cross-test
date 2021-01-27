@@ -1,6 +1,6 @@
 [package]
 name = "cross-test"
-version = "0.1.6"
+version = "0.1.7-alpha.0"
 authors = ["Danilo Guanabara <danguafer@gmail.com>"]
 edition = "2018"
 description = "Native and web testing in a single framework"
