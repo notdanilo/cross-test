@@ -1,3 +1,5 @@
+//! Module that re-exports all the required items to make use of `cross-test`.
+
 #[cfg(not(target_arch = "wasm32"))]
 pub use tokio;
 
