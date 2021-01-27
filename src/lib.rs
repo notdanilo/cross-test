@@ -26,9 +26,12 @@ pub use platform::*;
 
 #[cfg(test)]
 mod tests {
-    use crate::test;
+    use crate as cross_test;
+    use cross_test::prelude::*;
 
-    #[test]
+    configure!();
+
+    #[cross_test::test]
     async fn it_works() {
         assert_eq!(2 + 2, 4);
     }
